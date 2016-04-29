@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class SessionsController < ApplicationController
 
   def new
@@ -28,27 +27,3 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 end
-=======
-class SessionsController < ApplicationController
-
-  def new
-  end
-
-  def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user
-    else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
-    end
-  end
-
-  def destroy
-    log_out if logged_in?
-    redirect_to root_url
-  end
-end
->>>>>>> parent of 2b809db... Finish user edit, update, index, and destroy actions

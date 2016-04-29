@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
@@ -59,14 +58,3 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to root_url
   end
 end
-=======
-require 'test_helper'
-
-class UsersControllerTest < ActionController::TestCase
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-end
->>>>>>> parent of 2b809db... Finish user edit, update, index, and destroy actions
