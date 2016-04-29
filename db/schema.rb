@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160428040030) do
+=======
+ActiveRecord::Schema.define(version: 20160408030638) do
+>>>>>>> parent of 2b809db... Finish user edit, update, index, and destroy actions
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+<<<<<<< HEAD
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"
@@ -26,6 +31,12 @@ ActiveRecord::Schema.define(version: 20160428040030) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+=======
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.string   "remember_digest"
+>>>>>>> parent of 2b809db... Finish user edit, update, index, and destroy actions
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

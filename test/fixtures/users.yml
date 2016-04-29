@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 michael:
   name: Michael Example
   email: michael@example.com
@@ -35,3 +36,9 @@ user_<%= n %>:
   activated: true
   activated_at: <%= Time.zone.now %>
 <% end %>
+=======
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
+>>>>>>> parent of 2b809db... Finish user edit, update, index, and destroy actions

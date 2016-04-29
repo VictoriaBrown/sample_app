@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module UsersHelper
 
   # Returns the Gravatar for the given user.
@@ -8,3 +9,14 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
 end
+=======
+module UsersHelper
+  
+  # Returns the Gravatar for the given user.
+  def gravatar_for(user)
+    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
+    image_tag(gravatar_url, alt: user.name, class: "gravatar")
+  end
+end
+>>>>>>> parent of 2b809db... Finish user edit, update, index, and destroy actions

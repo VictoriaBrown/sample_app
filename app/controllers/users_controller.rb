@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
@@ -75,3 +76,33 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end
 end
+=======
+class UsersController < ApplicationController
+  
+  def show
+    @user = User.find(params[:id])
+  end
+  
+  def new
+    @user = User.new
+  end
+  
+  def create
+    @user = User.new(user_params)    # Not the final implementation!
+    if @user.save
+      log_in @user
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
+    else
+      render 'new'
+    end
+  end
+  
+  private
+  
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                    :password_confirmation)
+    end
+end
+>>>>>>> parent of 2b809db... Finish user edit, update, index, and destroy actions
